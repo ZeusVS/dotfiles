@@ -34,11 +34,10 @@
 *.color7: 		#e4e4e4
 *.color15: 		#ffffff
 
-URxvt*font:	    	xft:DejaVuSansMono:size=12:antialias=true:
-URxvt*letterSpace: 	-1
-URxvt*borderLess: 	false
-URxvt*externalBorder: 	0
-URxvt*internalBorder: 	4
-URxvt*scrollBar: 	false
-URxvt*saveLines:	5000
-URxvt.geometry: 	400x400
+xterm*font:	    	xft:DejaVuSansMono:size=12:antialias=true:
+xterm*letterSpace: 	-1
+xterm*borderLess: 	false
+xterm*externalBorder: 	0
+xterm*internalBorder: 	4
+xterm*scrollBar: 	false
+xterm*saveLines:	5000
