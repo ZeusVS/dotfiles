@@ -34,7 +34,7 @@
 *.color7: 		#e4e4e4
 *.color15: 		#ffffff
 
-xterm*font:	    	xft:DejaVuSansMono:size=12:antialias=true:
+xterm*font:	    	xft:Inconsolata Nerd Font Mono:style=Medium:size=14:pixelsize=16:antialias=true:
 xterm*letterSpace: 	-1
 xterm*borderLess: 	false
 xterm*externalBorder: 	0
