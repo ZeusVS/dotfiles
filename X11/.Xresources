@@ -1,38 +1,49 @@
-*.foreground:		#C6C6C6
-*.background:		#1C1C1C
-*.cursorColor:		#444444
+! Base16 Kanagawa
+! Scheme author: Tommaso Laurenzi (https://github.com/rebelot)
+! Template author: Tinted Theming (https://github.com/tinted-theming)
 
-! black 236 238
-*.color0: 		#303030
-*.color8: 		#444444
+#define base00 #1f1f28
+#define base01 #16161d
+#define base02 #223249
+#define base03 #54546d
+#define base04 #727169
+#define base05 #dcd7ba
+#define base06 #c8c093
+#define base07 #717c7c
+#define base08 #c34043
+#define base09 #ffa066
+#define base0A #c0a36e
+#define base0B #76946a
+#define base0C #6a9589
+#define base0D #7e9cd8
+#define base0E #957fb8
+#define base0F #d27e99
 
-! red 167
-*.color1: 		#d75f5f
-*.color9: 		#d75f5f
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-! green 108
-*.color2: 		#87AF87
-*.color10: 		#87AF87
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-! yellow 221
-*.color3: 		#ffd75f
-*.color11: 		#ffd75f
-
-! blue 110
-*.color4: 		#87afd7
-*.color12: 		#87afd7
-
-! magenta 146
-*.color5: 		#afafd7
-*.color13: 		#afafd7
-
-! cyan 75
-*.color6: 		#afd7ff
-*.color14: 		#afd7ff
-
-! white 239 15
-*.color7: 		#e4e4e4
-*.color15: 		#ffffff
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
 
 xterm*font:	    	xft:Inconsolata Nerd Font Mono:style=Regular:size=14:antialias=true:
 xterm*letterSpace: 	0
@@ -43,3 +54,4 @@ xterm*externalBorder: 	0
 xterm*internalBorder: 	4
 xterm*scrollBar: 	false
 xterm*saveLines:	5000
+xterm*depth:	    24
