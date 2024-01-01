@@ -43,8 +43,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 if [ "$(tty)" = "/dev/tty1" ];
 then
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
-else
-    neofetch
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
