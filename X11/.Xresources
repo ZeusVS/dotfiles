@@ -37,7 +37,6 @@
 xterm*font:	    	xft:Inconsolata Nerd Font Mono:style=Regular:size=14:antialias=true:
 xterm*letterSpace: 	0
 xterm*lineSpace:    0
-xterm*depth:        24
 xterm*cursorBlink:  false
 xterm*borderLess: 	true
 xterm*externalBorder: 	0
