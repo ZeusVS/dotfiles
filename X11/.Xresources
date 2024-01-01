@@ -34,9 +34,12 @@
 *.color7: 		#e4e4e4
 *.color15: 		#ffffff
 
-xterm*font:	    	xft:Inconsolata Nerd Font Mono:style=Medium:size=14:pixelsize=16:antialias=true:
-xterm*letterSpace: 	-1
-xterm*borderLess: 	false
+xterm*font:	    	xft:Inconsolata Nerd Font Mono:style=Regular:size=14:antialias=true:
+xterm*letterSpace: 	0
+xterm*lineSpace:    0
+xterm*depth:        24
+xterm*cursorBlink:  false
+xterm*borderLess: 	true
 xterm*externalBorder: 	0
 xterm*internalBorder: 	4
 xterm*scrollBar: 	false
