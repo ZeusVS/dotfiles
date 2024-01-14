@@ -1,57 +1,44 @@
-! Base16 Kanagawa
-! Scheme author: Tommaso Laurenzi (https://github.com/rebelot)
-! Template author: Tinted Theming (https://github.com/tinted-theming)
+xterm*termName:     xterm-color
 
-#define base00 #1f1f28
-#define base01 #16161d
-#define base02 #223249
-#define base03 #54546d
-#define base04 #727169
-#define base05 #dcd7ba
-#define base06 #c8c093
-#define base07 #717c7c
-#define base08 #c34043
-#define base09 #ffa066
-#define base0A #c0a36e
-#define base0B #76946a
-#define base0C #6a9589
-#define base0D #7e9cd8
-#define base0E #957fb8
-#define base0F #d27e99
+*background: #181616
+*foreground: #c5c9c5
+*cursor: #C8C093
 
-*foreground:   base05
-#ifdef background_opacity
-*background:   [background_opacity]base00
-#else
-*background:   base00
-#endif
-*cursorColor:  base05
+! normal
+*.color0: #0d0c0c
+*.color1: #c4746e
+*.color2: #8a9a7b
+*.color3: #c4b28a
+*.color4: #8ba4b0
+*.color5: #a292a3
+*.color6: #8ea4a2
+*.color7: #C8C093
 
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
+! bright
+*.color8:  #a6a69c
+*.color9:  #E46876
+*.color10: #87a987
+*.color11: #E6C384
+*.color12: #7FB4CA
+*.color13: #938AA9
+*.color14: #7AA89F
+*.color15: #c5c9c5
 
-*color8:       base03
-*color9:       base09
-*color10:      base01
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
-*color15:      base07
+xft.dpi:            96
+xterm*font:	    	xft:UbuntuMono Nerd Font Mono:Style=Normal:size=14:antialias=true:
+xterm*renderfont:   true
 
-xterm*font:	    	xft:Inconsolata Nerd Font Mono:style=Regular:size=14:antialias=true:
 xterm*letterSpace: 	0
 xterm*lineSpace:    0
 xterm*cursorBlink:  false
 xterm*borderLess: 	true
+xterm*borderWidth:  0
 xterm*externalBorder: 	0
-xterm*internalBorder: 	4
+xterm*internalBorder: 	12
 xterm*scrollBar: 	false
 xterm*saveLines:	5000
 xterm*depth:	    24
+
+*VT100*Translations: #override \n\
+    Ctrl <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl <Key>V: insert-selection(CLIPBOARD)

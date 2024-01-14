@@ -13,16 +13,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Inconsolata Nerd Font 14
+font pango:UbuntuMono Nerd Font Mono 14
 
-# GET DEM BORDERS OUT OF HEREc:w
-for_window [class="^.*"] border pixel 2
-                         # class                 border  backgr. text    indicator child_border
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# GET DEM BORDERS OUT OF HERE
+default_border none
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -38,6 +32,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# startup picom to set things like transparency
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -63,7 +60,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'HackNerdFont Regular-14'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -164,12 +161,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# shutdown/restart/suspend...
-set $mode_system \
-System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
-
-bindsym $mod+BackSpace mode "$mode_system"
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -215,13 +206,3 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/feh/wave.png
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-
-# Terminal scratchpad
-for_window [instance="xterm-scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+t [instance="xterm-scratchpad"] scratchpad show
-exec xterm -name xterm-scratchpad
-
-# htop scratchpad
-for_window [instance="htop-scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+p [instance="htop-scratchpad"] scratchpad show
-exec xterm -name htop-scratchpad -e htop
