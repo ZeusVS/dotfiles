@@ -37,3 +37,9 @@ ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 #########
 mkdir -p "$XDG_DATA_HOME"
 cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
+
+#########
+# Picom #
+#########
+rm -rf "$XDG_CONFIG_HOME/picom"
+ln -s "$DOTFILES/picom" "$XDG_CONFIG_HOME"
