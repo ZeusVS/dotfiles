@@ -14,6 +14,11 @@ return {
         end
     },
 
+    -- Icons
+    {
+        'nvim-tree/nvim-web-devicons'
+    },
+
     -- statusline
     {
         "nvim-lualine/lualine.nvim",
