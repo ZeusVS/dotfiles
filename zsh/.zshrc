@@ -32,7 +32,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
-source ~/dotfiles/zsh/external/completion.zsh
+source $DOTFILES/zsh/external/completion.zsh
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -40,8 +40,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-source ~/dotfiles/zsh/script.sh
-source ~/dotfiles/zsh/external/bd.zsh
+source $DOTFILES/zsh/script.sh
+source $DOTFILES/zsh/external/bd.zsh
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

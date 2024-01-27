@@ -1,0 +1,16 @@
+# Import the colorscheme I want to use
+import = ["~/.config/alacritty/kanagawa_dragon.toml"]
+
+[env]
+TERM = "alacritty"
+
+[window]
+opacity = 0.95
+padding ={ x = 12, y = 12 }
+
+[scrolling]
+history = 10000
+
+[font]
+normal = { family = "UbuntuMono Nerd Font", style = "Regular" }
+size = 14.00

@@ -43,3 +43,10 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 #########
 rm -rf "$XDG_CONFIG_HOME/picom"
 ln -s "$DOTFILES/picom" "$XDG_CONFIG_HOME"
+
+
+#############
+# Alacritty #
+#############
+rm -rf "$XDG_CONFIG_HOME/alacritty"
+ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"

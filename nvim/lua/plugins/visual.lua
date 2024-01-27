@@ -7,8 +7,7 @@ return {
         config = function()
             -- Disable all italics because they alwas get clipped
             require('kanagawa').setup({
-                commentStyle = {italic = false},
-                keywordStyle = {italic = false},
+                transparent = true,
             })
             vim.cmd("colorscheme kanagawa-dragon")
         end
