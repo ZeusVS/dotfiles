@@ -197,11 +197,7 @@ bar {
         tray_output none
 }
 
-# Keystroke to lock system
-set $i3lockwall i3lock -i ~/Pictures/cherry-blossoms.png
-bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
-
-exec --no-startup-id feh --bg-fill ~/.config/i3/feh/wave.png
+exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/*
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
