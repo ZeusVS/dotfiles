@@ -197,7 +197,7 @@ bar {
         tray_output none
 }
 
-exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/*
+exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/sunlight.png
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable

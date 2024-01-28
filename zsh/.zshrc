@@ -7,7 +7,7 @@ source "$XDG_CONFIG_HOME/zsh/aliases"
 # Autostart startx
 if [ "$(tty)" = "/dev/tty1" ];
 then
-    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc" 
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
@@ -48,3 +48,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# Created by `pipx` on 2024-01-27 21:16:53
+export PATH="$PATH:/home/Zeus/.local/bin"
