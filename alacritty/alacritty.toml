@@ -1,5 +1,5 @@
 # Import the colorscheme I want to use
-import = ["~/.config/alacritty/kanagawa_dragon.toml"]
+import = ["~/.config/alacritty/kanagawa_wave.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -8,12 +8,14 @@ draw_bold_text_with_bright_colors = true
 TERM = "alacritty"
 
 [window]
-opacity = 0.70
-padding ={ x = 6, y = 6 }
+opacity = 0.80
+padding ={ x = 15, y = 15 }
 
 [scrolling]
 history = 10000
 
 [font]
-normal = { family = "UbuntuMono Nerd Font", style = "Regular" }
-size = 14.00
+normal = { family = "Iosevka nerd font", style = "medium" }
+italic = { family = "Iosevka nerd font", style = "medium oblique" }
+bold = { family = "Iosevka nerd font", style = "extrabold" }
+size = 13.00
