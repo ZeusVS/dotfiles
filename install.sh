@@ -15,6 +15,12 @@ ln -s "$DOTFILES/nvim/lua" "$XDG_CONFIG_HOME/nvim"
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
+#############
+# AvesomeWM #
+#############
+rm -rf "$XDG_CONFIG_HOME/awesome"
+ln -s "$DOTFILES/awesome" "$XDG_CONFIG_HOME"
+
 ######
 # i3 #
 ######

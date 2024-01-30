@@ -8,7 +8,7 @@ draw_bold_text_with_bright_colors = true
 TERM = "alacritty"
 
 [window]
-opacity = 0.80
+opacity = 1.00
 padding ={ x = 15, y = 15 }
 
 [scrolling]
@@ -18,4 +18,4 @@ history = 10000
 normal = { family = "Iosevka nerd font", style = "medium" }
 italic = { family = "Iosevka nerd font", style = "medium oblique" }
 bold = { family = "Iosevka nerd font", style = "extrabold" }
-size = 13.00
+size = 12.00

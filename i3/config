@@ -19,8 +19,8 @@ default_border pixel 2
 default_floating_border pixel 2
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #7e9cd8 #7e9cd8 #7e9cd8 #7e9cd8   #7e9cd8
+client.unfocused        #54546d #54546d #54546d #54546d   #54546d
 
 gaps inner 15
 
@@ -66,7 +66,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Start Rofi
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "rofi -show run"
 
 # change focus
 bindsym $mod+h focus left
@@ -200,7 +200,7 @@ bar {
         bindsym button5 nop
 }
 
-exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/feh/*
+exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/*
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
