@@ -1,0 +1,70 @@
+(defwidget bar []
+
+  (centerbox :orientation "h"
+    (workspaces)
+    (music)
+    (sidestuff)))
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (metric :label "󰕾 "
+            :value volume
+            :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")
+    time))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (button :onclick "i3 workspace 1" 1)
+    (button :onclick "i3 workspace 2" 2)
+    (button :onclick "i3 workspace 3" 3)
+    (button :onclick "i3 workspace 4" 4)
+    (button :onclick "i3 workspace 5" 5)
+    (button :onclick "i3 workspace 6" 6)
+    (button :onclick "i3 workspace 7" 7)
+    (button :onclick "i3 workspace 8" 8)
+    (button :onclick "i3 workspace 9" 9)))
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "🎵${music}" : ""}))
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))
+
+
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll volume :interval "1s" 
+  "scripts/getvol.sh")
+
+(defpoll time :interval "10s"
+  "date '+󰃮 %d/%m/%Y 󰥔 %H:%M'")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "10px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar))

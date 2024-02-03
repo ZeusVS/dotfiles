@@ -1,0 +1,41 @@
+* {
+    all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+    background-color: #1f1f28;
+    color: #dcd7ba;
+    padding: 5px;
+    font-family: Iosevka Nerd Font;
+    font-size: 15;
+    font-weight: 600;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+    all: unset;
+    color: #7e9cd8;
+}
+
+.metric scale trough highlight {
+    all: unset;
+    background-color: #7e9cd8;
+    color: #000000;
+    border-radius: 10px;
+}
+
+.metric scale trough {
+    all: unset;
+    background-color: #727169;
+    border-radius: 50px;
+    min-height: 3px;
+    min-width: 50px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.workspaces button:hover {
+    color: #D35D6E;
+}

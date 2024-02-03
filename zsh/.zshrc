@@ -13,13 +13,9 @@ then
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc" 
 fi
 
-
 # Load aliases and fpath
 fpath=($ZDOTDIR/external $fpath)
 source "$XDG_CONFIG_HOME/zsh/aliases"
-
-# Created by `pipx` on 2024-01-27 21:16:53
-export PATH="$PATH:/home/Zeus/.local/bin"
 
 setopt AUTO_PARAM_SLASH
 setopt globdots
