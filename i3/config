@@ -18,8 +18,8 @@ font pango:Iosevka Nerd Font Mono 13
 default_border pixel 1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #000000 #000000 #000000 #c0a36e   #c0a36e
-client.unfocused        #000000 #000000 #000000 #727169   #727169
+client.focused          #000000 #000000 #000000 #7e9cd8   #7e9cd8
+client.unfocused        #000000 #000000 #000000 #090618   #090618
 
 gaps inner 15
 
