@@ -1,0 +1,53 @@
+/* Babies first attempt at ricing firefox */
+:root {
+	--navbar-height: 48px;
+}
+
+/* hide tabline */
+#titlebar {
+	appearance: none !important;
+}
+
+#TabsToolbar .toolbar-items {
+	display: none !important;
+}
+
+/* customise the navigation bar */
+#nav-bar {
+	height: calc(var(--navbar-height) - 16px) !important;
+}
+
+#urlbar {
+	--urlbar-toolbar-height: calc(var(--navbar-height) - 16px) !important;
+	z-index: 200 !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+	top: -4px !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+	height: calc(var(--navbar-height) - 8px) !important;
+	padding-block: 4px !important;
+}
+
+#private-browsing-indicator-with-label {
+	display: none !important;
+}
+
+/* hide sidebar header (hides sidebar for everything) */
+#sidebar-header {
+	display: none;
+}
+
+/* hide sidebar resize handle */
+.sidebar-splitter {
+	display: none !important;
+}
+
+/* inner width = expanded width & move inner to only show initial-width long section */
+#sidebar {
+	min-width: var(--sidebar-width) !important;
+	max-width: var(--sidebar-width) !important;
+	width: var(--sidebar-width) !important;
+}
