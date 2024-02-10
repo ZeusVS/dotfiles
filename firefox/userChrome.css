@@ -1,53 +1,172 @@
-/* Babies first attempt at ricing firefox */
+/* Customised version of simplefox */
+
 :root {
-	--navbar-height: 48px;
+    /* Define global colors */
+    --sfwindow: #1f1f28;
+    --sfsecondary: #1f1f28;
+    --bluecolor: #7e9cd8;
+
+    --tab-min-height: 0 !important;
+    --tab-max-height: 30px !important;
+    --toolbar-bgcolor: var(--sfsecondary) !important;
+    --tabs-border-color: var(--sfsecondary) !important;
+    --lwt-sidebar-background-color: var(--sfwindow) !important;
+    --lwt-toolbar-field-focus: var(--sfsecondary) !important;
+    --toolbarbutton-border-radius: 0 !important;
+    --tab-border-radius: 0px !important;
+    --tab-block-margin: 0px !important;
 }
 
-/* hide tabline */
-#titlebar {
-	appearance: none !important;
+/* Bar resizing */
+.tab-content {
+    height: var(--tab-max-height);
 }
 
-#TabsToolbar .toolbar-items {
-	display: none !important;
+/* Hide the big ugly megabar */
+.urlbarView {
+    display: none !important;
 }
 
-/* customise the navigation bar */
-#nav-bar {
-	height: calc(var(--navbar-height) - 16px) !important;
+/* Tabs colors  */
+#tabbrowser-tabs:not([movingtab])
+> #tabbrowser-arrowscrollbox
+> .tabbrowser-tab
+> .tab-stack
+> .tab-background[multiselected='true'],
+#tabbrowser-tabs:not([movingtab])
+> #tabbrowser-arrowscrollbox
+> .tabbrowser-tab
+> .tab-stack
+> .tab-background[selected='true'] {
+    background-image: none !important;
+    background-color: var(--toolbar-bgcolor) !important;
+}
+.tab-background {
+    background: var(--sfwindow) !important;
+}
+.tabbrowser-tab .tab-content {
+    color: #dcd7ba !important;
+    margin-left: -1px !important;
+}
+.tab-background[selected] {
+    background: var(--bluecolor) !important;
+}
+.tabbrowser-tab[selected] .tab-content[selected] {
+    color: var(--sfwindow) !important;
 }
 
-#urlbar {
-	--urlbar-toolbar-height: calc(var(--navbar-height) - 16px) !important;
-	z-index: 200 !important;
+/* Sidebar color  */
+#sidebar-box,
+.sidebar-placesTree {
+    background-color: var(--sfwindow) !important;
 }
 
-#urlbar[breakout][breakout-extend] {
-	top: -4px !important;
+/* Remove elements */
+/* Tabs elements  */
+.tab-close-button {
+    display: none;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-input-container {
-	height: calc(var(--navbar-height) - 8px) !important;
-	padding-block: 4px !important;
+#nav-bar:not([tabs-hidden='true']) {
+    box-shadow: none;
 }
 
-#private-browsing-indicator-with-label {
-	display: none !important;
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+> #tabbrowser-arrowscrollbox
+> .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: 0px !important;
 }
 
-/* hide sidebar header (hides sidebar for everything) */
-#sidebar-header {
-	display: none;
+.tab-background {
+    margin-left: -2px !important;
+    margin-right: -2px !important;
 }
 
-/* hide sidebar resize handle */
-.sidebar-splitter {
-	display: none !important;
+.tabbrowser-tab:is([visuallyselected='true'], [multiselected])
+> .tab-stack
+> .tab-background {
+    box-shadow: none !important;
 }
 
-/* inner width = expanded width & move inner to only show initial-width long section */
-#sidebar {
-	min-width: var(--sidebar-width) !important;
-	max-width: var(--sidebar-width) !important;
-	width: var(--sidebar-width) !important;
+/* Url Bar  */
+#urlbar-input-container {
+    background-color: var(--sfsecondary) !important;
+    border: 1px solid rgba(0, 0, 0, 0) !important;
+    color: #dcd7ba !important;
+}
+
+#urlbar-container {
+    margin-left: 10px !important;
+}
+
+#navigator-toolbox toolbarbutton {
+    fill: var(--bluecolor) !important;
+}
+
+#urlbar[focused='true'] > #urlbar-background {
+    box-shadow: none !important;
+}
+
+#navigator-toolbox {
+    border: none !important;
+    font-family:Iosevka nerd font !important;
+    font-weight: 500 !important;
+}
+
+/* Bookmarks bar  */
+.bookmark-item .toolbarbutton-icon {
+    display: none;
+}
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+    min-width: 1.6em;
+}
+
+/* Hide everything BUT the zoom indicator within the URL Bar */
+#page-action-buttons > :not(#urlbar-zoom-button) { display: none !important; }
+
+/* Toolbar  */
+#reader-mode-button,
+#readinglist-addremove-button,
+#unified-extensions-button,
+#urlbar-go-button,
+#identity-box,
+#tracking-protection-icon-container,
+#urlbar-zoom-button,
+#star-button-box,
+#pageActionButton,
+#pageActionSeparator,
+#tabs-newtab-button,
+#back-button,
+#forward-button,
+.tab-secondary-label {
+    display: none !important;
+}
+
+/* Disable elements  */
+#context-navigation,
+#context-savepage,
+#context-pocket,
+#context-sendpagetodevice,
+#context-selectall,
+#context-viewsource,
+#context-inspect-a11y,
+#context-sendlinktodevice,
+#context-openlinkinusercontext-menu,
+#context-bookmarklink,
+#context-savelink,
+#context-savelinktopocket,
+#context-sendlinktodevice,
+#context-searchselect,
+#context-sendimage,
+#context-print-selection {
+    display: none !important;
+}
+
+#context_bookmarkTab,
+#context_moveTabOptions,
+#context_sendTabToDevice,
+#context_reopenInContainer,
+#context_selectAllTabs,
+#context_closeTabOptions {
+    display: none !important;
 }
