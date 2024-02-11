@@ -1,70 +1,131 @@
-(defwidget bar []
+(defwindow bar
+     :monitor 0
+     :geometry (geometry :x "0%"
+         :y "0%"
+         :width "100%"
+         :height "30px"
+         :anchor "bottom center")
+    :stacking "fg"
+    :reserve (struts :side "bottom" :distance "30px")
+    :windowtype "dock"
+    :exclusive true
+ (main))
 
-  (centerbox :orientation "h"
-    (workspaces)
-    (music)
-    (sidestuff)))
+(defwidget main []
+    (box 
+        :orientation "h"
+        :class "bar"
+        (power)
+        (workspaces 
+            :names active-workspaces 
+            :current-idx current-workspace-index
+        )
+        (sidestuff)
+    )
+)
+
+(defwidget power []
+    (box 
+        :class "power"
+        :orientation "h" 
+        :space-evenly false 
+        :halign "begin"
+        :valign "center"
+        (button 
+            :onclick ""
+            " "
+        )
+    )
+)
 
 (defwidget sidestuff []
-  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label "󰕾 "
-            :value volume
-            :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")
-    time))
+    (box 
+        :class "sidestuff" 
+        :orientation "h" 
+        :space-evenly false 
+        :spacing 10
+        :halign "end"
+        :valign "center"
+        (label 
+            :class "sound"
+            :text volume
+        )
+        (label 
+            :class "bluetooth"
+            :text bluetooth
+        )
+        (label 
+            :class "wifi"
+            :text wifi
+        )
+        (label
+            :class "time"
+            :text time
+        )
+    )
+)
 
-(defwidget workspaces []
-  (box :class "workspaces"
-       :orientation "h"
-       :space-evenly true
-       :halign "start"
-       :spacing 10
-    (button :onclick "i3 workspace 1" 1)
-    (button :onclick "i3 workspace 2" 2)
-    (button :onclick "i3 workspace 3" 3)
-    (button :onclick "i3 workspace 4" 4)
-    (button :onclick "i3 workspace 5" 5)
-    (button :onclick "i3 workspace 6" 6)
-    (button :onclick "i3 workspace 7" 7)
-    (button :onclick "i3 workspace 8" 8)
-    (button :onclick "i3 workspace 9" 9)))
+(defwidget workspaces [names current-idx]
+    (box 
+        :class "workspaces"
+        :orientation "h"
+        :space-evenly false
+        :halign "center"
+        :valign "center"
+        :spacing 10
+        (button :onclick "i3 workspace 1" 
+            :class {captures(names,"\"1\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "1" ? "active" : "exists" : "regular"}
+            1)
+        (button :onclick "i3 workspace 2" 
+            :class {captures(names,"\"2\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "2" ? "active" : "exists" : "regular"}
+        2)
+        (button :onclick "i3 workspace 3" 
+            :class {captures(names,"\"3\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "3" ? "active" : "exists" : "regular"}
+        3)
+        (button :onclick "i3 workspace 4" 
+            :class {captures(names,"\"4\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "4" ? "active" : "exists" : "regular"}
+        4)
+        (button :onclick "i3 workspace 5" 
+            :class {captures(names,"\"5\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "5" ? "active" : "exists" : "regular"}
+        5)
+        (button :onclick "i3 workspace 6" 
+            :class {captures(names,"\"6\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "6" ? "active" : "exists" : "regular"}
+        6)
+        (button :onclick "i3 workspace 7" 
+            :class {captures(names,"\"7\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "7" ? "active" : "exists" : "regular"}
+        7)
+        (button :onclick "i3 workspace 8" 
+            :class {captures(names,"\"8\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "8" ? "active" : "exists" : "regular"}
+        8)
+        (button :onclick "i3 workspace 9" 
+            :class {captures(names,"\"9\"") != [] ? captures(names,"\"[0-9]\"")[captures(current-idx,"[0-9]")[0][0]][0] =~ "9" ? "active" : "exists" : "regular"}
+        9)
+    )
+)
 
-(defwidget music []
-  (box :class "music"
-       :orientation "h"
-       :space-evenly false
-       :halign "center"
-    {music != "" ? "🎵${music}" : ""}))
-
-
-(defwidget metric [label value onchange]
-  (box :orientation "h"
-       :class "metric"
-       :space-evenly false
-    (box :class "label" label)
-    (scale :min 0
-           :max 101
-           :active {onchange != ""}
-           :value value
-           :onchange onchange)))
-
-
-
-(deflisten music :initial ""
-  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
-
+; Utilities
 (defpoll volume :interval "1s" 
-  "scripts/getvol.sh")
+    "scripts/getvol.sh"
+)
+
+(defpoll bluetooth :interval "1s" 
+    "scripts/getbluetooth.sh"
+)
+
+(defpoll wifi :interval "1s" 
+    "scripts/getwifi.sh"
+)
 
 (defpoll time :interval "10s"
-  "date '+󰃮 %d/%m/%Y 󰥔 %H:%M'")
+    "date '+󰃮 %d/%m/%Y  %H:%M'"
+)
 
-(defwindow bar
-  :monitor 0
-  :windowtype "dock"
-  :geometry (geometry :x "0%"
-                      :y "0%"
-                      :width "90%"
-                      :height "10px"
-                      :anchor "top center")
-  :reserve (struts :side "top" :distance "4%")
-  (bar))
+(deflisten active-workspaces 
+    :initial "N/A" 
+    `xprop -spy -root _NET_DESKTOP_NAMES`
+)
+
+(deflisten current-workspace-index 
+    :initial "N/A" 
+    `xprop -spy -root _NET_CURRENT_DESKTOP`
+)

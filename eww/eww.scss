@@ -9,33 +9,58 @@
     padding: 5px;
     font-family: Iosevka Nerd Font;
     font-size: 15;
-    font-weight: 600;
+    font-weight: 800;
 }
 
-// Styles on classes (see eww.yuck for more information)
-
-.sidestuff slider {
-    all: unset;
-    color: #7e9cd8;
+.sidestuff {
+    color: #1f1f28;
 }
 
-.metric scale trough highlight {
-    all: unset;
+.time {
+    padding: 0px 10px;
     background-color: #7e9cd8;
-    color: #000000;
-    border-radius: 10px;
+    border-radius: 90px;
 }
 
-.metric scale trough {
-    all: unset;
-    background-color: #727169;
-    border-radius: 50px;
-    min-height: 3px;
-    min-width: 50px;
-    margin-left: 10px;
-    margin-right: 20px;
+.sound {
+    padding: 0px 10px;
+    background-color: #7e9cd8;
+    border-radius: 90px;
+}
+
+.wifi {
+    padding: 0px 10px;
+    background-color: #7e9cd8;
+    border-radius: 90px;
+}
+
+.bluetooth {
+    padding: 0px 10px;
+    background-color: #7e9cd8;
+    border-radius: 90px;
 }
 
 .workspaces button:hover {
-    color: #D35D6E;
+    color: #dcd7ba;
+}
+
+.workspaces button {
+    padding: 0px 10px;
+    color: #dcd7ba;
+    background-color: #1f1f28;
+    border-radius: 90px;
+}
+
+.workspaces .exists {
+    color: #1f1f28;
+    background-color: #dcd7ba;
+}
+.workspaces .active {
+    padding: 0px 20px;
+    color: #1f1f28;
+    background-color: #7e9cd8;
+}
+
+.power button {
+    color: #7e9cd8;
 }
