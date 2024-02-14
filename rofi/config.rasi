@@ -1,0 +1,4 @@
+configuration {
+    font: "Iosevka nerd font 4";
+}
+@theme "kanagawa"

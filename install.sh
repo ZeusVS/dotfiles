@@ -50,9 +50,20 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 rm -rf "$XDG_CONFIG_HOME/picom"
 ln -s "$DOTFILES/picom" "$XDG_CONFIG_HOME"
 
-
 #############
 # Alacritty #
 #############
 rm -rf "$XDG_CONFIG_HOME/alacritty"
 ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
+
+############
+# Neofetch #
+############
+rm -rf "$XDG_CONFIG_HOME/neofetch"
+ln -s "$DOTFILES/neofetch" "$XDG_CONFIG_HOME"
+
+########
+# Rofi #
+########
+rm -rf "$XDG_CONFIG_HOME/rofi"
+ln -s "$DOTFILES/rofi" "$XDG_CONFIG_HOME"

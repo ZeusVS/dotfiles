@@ -1,0 +1,108 @@
+* {
+    font:   "Iosevka nerd font Medium 12";
+
+    /* colors.primary */
+    background: #1f1f28;
+    foreground: #dcd7ba;
+
+    /* colors.normal */
+    black:   #090618;
+    red:     #c34043;
+    green:   #76946a;
+    yellow:  #c0a36e;
+    blue:    #7e9cd8;
+    magenta: #957fb8;
+    cyan:    #6a9589;
+    white:   #c8c093;
+
+    /* colors.bright */
+    bblack:   #727169;
+    bred:     #e82424;
+    bgreen:   #98bb6c;
+    byellow:  #e6c384;
+    bblue:    #7fb4ca;
+    bmagenta: #938aa9;
+    bcyan:    #7aa89f;
+    bwhite:   #dcd7ba;
+
+    /* colors.selection */
+    selectbackground: #2d4f67;
+    selectforeground: #c8c093;
+    
+    background-color: transparent;
+    text-color: @foreground;
+    accent-color: @red;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    background-color:   @background;
+    border-color:       @blue;
+
+    location:   center;
+    width:      480px;
+    border:     1px;
+}
+
+inputbar {
+    padding:    5px;
+    spacing:    12px;
+    children:   [ entry ];
+    border-color: @blue;
+    border: 0 0 1px 0;
+}
+
+prompt, entry, element-text, element-icon {
+    vertical-align: 0.5;
+}
+
+entry {
+    text-color:  @blue;
+}
+
+listview {
+    lines:      8;
+    columns:    1;
+
+    fixed-height:   true;
+}
+
+element {
+    padding:    5px;
+    spacing:    8px;
+}
+
+element normal urgent {
+    text-color: @red;
+}
+
+element normal active {
+    text-color: @red;
+}
+
+element selected {
+    text-color: @background;
+}
+
+element selected normal {
+    background-color:   @blue;
+}
+
+element selected urgent {
+    background-color:   @red;
+}
+
+element selected active {
+    background-color:   @green;
+}
+
+element-icon {
+    size:   0.75em;
+}
+
+element-text {
+    text-color: inherit;
+}
