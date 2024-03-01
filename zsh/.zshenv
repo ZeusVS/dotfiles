@@ -1,4 +1,7 @@
-# For dotfiles
+# For desktop data
+export XDG_CURRENT_DESKTOP="GNOME"
+
+# For config data
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # For specific data
@@ -10,6 +13,7 @@ export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# For dotfiles
 export DOTFILES="$HOME/dotfiles"
 
 # History filepath
