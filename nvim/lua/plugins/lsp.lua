@@ -43,6 +43,17 @@ return {
                         }
                     })
                 end,
+                -- Remove annoying tsserver remark 'File is a CommonJS module'
+                ["tsserver"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.tsserver.setup({
+                        init_options = {
+                            preferences = {
+                                disableSuggestions = true,
+                            },
+                        },
+                    })
+                end,
             },
         })
 
