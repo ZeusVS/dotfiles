@@ -69,20 +69,31 @@ return {
             },
             window = {
                 -- completion = cmp.config.window.bordered(),
+                completion = { -- rounded border; thin-style scrollbar
+                    border = nil,
+                    scrollbar = '',
+                },
                 -- documentation = cmp.config.window.bordered(),
+                documentation = { -- no border; native-style scrollbar
+                    border = nil,
+                    scrollbar = '',
+                },
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ['<C-Space>'] = cmp.mapping.complete(),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
+                { name = 'copilot' },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
                 { name = 'path' },
-                { name = 'cmdline' },
+            } , {
                 { name = 'buffer' },
             })
         })
@@ -90,9 +101,11 @@ return {
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ '/', '?' }, {
             mapping = cmp.mapping.preset.cmdline(),
-            sources = {
+            sources = cmp.config.sources({
                 { name = 'buffer' }
-            }
+            }, {
+                { name = 'cmdline' }
+            })
         })
 
         -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
