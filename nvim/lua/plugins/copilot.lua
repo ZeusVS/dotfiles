@@ -4,6 +4,7 @@ return {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         build = ":Copilot auth",
+        event = "VeryLazy",
         config = function()
             require('copilot').setup {
                 panel = {
@@ -22,15 +23,19 @@ return {
     -- Copilot cmp integration
     {
         "zbirenbaum/copilot-cmp",
+        event = "VeryLazy",
         config = function ()
             require("copilot_cmp").setup()
         end
     },
 
     -- Copilot chat
+    -- This is the canary build because that's the only one available in lua
+    -- Theres issues and it's basically unusable
     {
         "CopilotC-Nvim/CopilotChat.nvim",
         branch = "canary",
+        event = "VeryLazy",
         dependencies = {
             { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
             { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -39,17 +44,16 @@ return {
         config = function()
             local chat = require("CopilotChat")
             chat.setup {
-                context = 'buffers',
                 debug = false, -- Enable debugging
+                context = 'buffers',
+                selection = require("CopilotChat.select").buffer,
                 window = {
-                    show_user_selection = false,
-                    auto_follow_cursor = true,
-                    layout = 'float',
-                    border = 'rounded',
-                    title = 'Copilot Chat',
+                    layout = 'vertical',
                 }
             }
-            vim.keymap.set('n', '<leader>co', chat.open, {})
+            vim.keymap.set('n', "<leader>co", function()
+                chat.open()
+            end, {})
         end,
     },
 }

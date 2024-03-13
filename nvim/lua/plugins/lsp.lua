@@ -89,7 +89,7 @@ return {
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
-                { name = 'copilot' },
+                -- { name = 'copilot' }, -- Disabled for now because i'm still learning how to code
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
                 { name = 'path' },
