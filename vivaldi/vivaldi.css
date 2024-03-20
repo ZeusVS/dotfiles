@@ -1,0 +1,13 @@
+#tabs-container {
+	--colorBg: #7e9cd8;
+	--colorFg: #1f1f28;
+	--colorAccentBgAlphaHeavy: #1f1f28;
+}
+
+.tab-position .tab.active .tab-header .favicon:not(.svg) {
+    filter: none;
+}
+
+.button-toolbar.newtab {
+    visibility: hidden;
+}

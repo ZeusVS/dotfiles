@@ -156,4 +156,6 @@ bindsym Print exec --no-startup-id flameshot gui
 
 exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/*
 
+# Set refresh rate of monitor to 75 Hz at startup
+exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1080 --rate 75
 # floating pop up automatically

@@ -13,17 +13,17 @@ then
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc" 
 fi
 
+# Load asdf
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+. "$HOME/.asdf/asdf.sh"
+
 # Load aliases and fpath
 fpath=($ZDOTDIR/external $fpath)
+fpath=(${ASDF_DIR}/completions $fpath)
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - --no-rehash)"
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Add go/bin to path
+export PATH="$HOME/go/bin/:$PATH"
 
 setopt AUTO_PARAM_SLASH
 setopt globdots
@@ -35,7 +35,7 @@ if [ $(command -v "fzf") ]; then
 fi
 
 # Auto/tab complete
-autoload -U compinit 
+autoload -Uz compinit 
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
