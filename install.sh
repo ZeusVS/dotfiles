@@ -67,3 +67,8 @@ ln -s "$DOTFILES/neofetch" "$XDG_CONFIG_HOME"
 ########
 rm -rf "$XDG_CONFIG_HOME/rofi"
 ln -s "$DOTFILES/rofi" "$XDG_CONFIG_HOME"
+
+########
+# Curl #
+########
+ln -s "$DOTFILES/curl/.curlrc" "$HOME"
