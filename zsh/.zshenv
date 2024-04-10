@@ -25,7 +25,7 @@ export SAVEHIST=10000
 
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always --line-range=:500 {}'"
 export FZF_ALT_C_OPTS="--preview 'lsd --tree --icon always --color always --depth 16 {}'"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

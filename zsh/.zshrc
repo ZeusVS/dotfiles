@@ -18,8 +18,8 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 . "$HOME/.asdf/asdf.sh"
 
 # Load aliases and fpath
-fpath=($ZDOTDIR/external $fpath)
-fpath=(${ASDF_DIR}/completions $fpath)
+fpath=($fpath $ZDOTDIR/external)
+fpath=($fpath ${ASDF_DIR}/completions)
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
 # Add go/bin to path
@@ -35,12 +35,12 @@ if [ $(command -v "fzf") ]; then
 fi
 
 # Auto/tab complete
+source $DOTFILES/zsh/external/completion.zsh
 autoload -Uz compinit 
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
-source $DOTFILES/zsh/external/completion.zsh
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
