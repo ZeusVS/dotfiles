@@ -48,15 +48,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-# Turso
-export PATH="/home/Zeus/.turso:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/Zeus/google-cloud-sdk/path.zsh.inc' ]; then . '/home/Zeus/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/Zeus/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/Zeus/google-cloud-sdk/completion.zsh.inc'; fi
-
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/.p10k.zsh
