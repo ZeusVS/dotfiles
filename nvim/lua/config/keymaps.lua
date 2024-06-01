@@ -3,10 +3,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- keymaps for better default experience
-vim.keymap.set({ 'n' , 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Set <leader>pv to 'project-view'
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Set <leader>pv to 'project-view' (oil.nvim)
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>")
 
 -- Set 'gd' to '<c-]>' which is project-wide goto definition
 vim.keymap.set("n", "gd", "<c-]>")
