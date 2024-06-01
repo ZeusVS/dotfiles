@@ -23,6 +23,9 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 "lua_ls",
+                "tsserver",
+                "sqlls",
+                "gopls",
             },
 
             handlers = {
@@ -60,7 +63,21 @@ return {
                 ["sqlls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.sqlls.setup({
-                        root_dir = function () return vim.loop.cwd() end
+                        root_dir = function() return vim.loop.cwd() end
+                    })
+                end,
+
+
+                -- Setup gofumpt formatting within gopls
+                ["gopls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.gopls.setup({
+                        settings = {
+                            gopls = {
+                                gofumpt = true,
+                                staticcheck = true,
+                            }
+                        }
                     })
                 end,
 
@@ -69,7 +86,7 @@ return {
 
         -- Configure cmp
         local cmp = require('cmp')
-        local cmp_select = {behavior = cmp.SelectBehavior.Select}
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
             snippet = {
@@ -102,7 +119,7 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
                 { name = 'path' },
-            } , {
+            }, {
                 { name = 'buffer' },
             })
         })
@@ -126,6 +143,5 @@ return {
                 { name = 'cmdline' }
             })
         })
-
     end,
 }

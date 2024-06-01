@@ -8,6 +8,9 @@ vim.keymap.set({ 'n' , 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Set <leader>pv to 'project-view'
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Set 'gd' to '<c-]>' which is project-wide goto definition
+vim.keymap.set("n", "gd", "<c-]>")
+
 -- in visual mode, make J and K move selection up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
