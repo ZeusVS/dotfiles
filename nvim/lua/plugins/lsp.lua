@@ -73,6 +73,9 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.gopls.setup({
                         settings = {
+                            analyses = {
+                                unusedparams = true,
+                            },
                             gopls = {
                                 gofumpt = true,
                                 staticcheck = true,
