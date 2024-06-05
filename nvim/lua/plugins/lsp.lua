@@ -77,7 +77,6 @@ return {
                                 unusedparams = true,
                             },
                             gopls = {
-                                gofumpt = true,
                                 staticcheck = true,
                             }
                         }
