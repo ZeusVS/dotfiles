@@ -4,7 +4,6 @@
 # nvim #
 ########
 mkdir -p "$XDG_CONFIG_HOME/nvim"
-mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 ln -sf "$DOTFILES/nvim/init.lua" "$XDG_CONFIG_HOME/nvim/init.lua"
 rm -rf  "$XDG_CONFIG_HOME/nvim/lua"
 ln -s "$DOTFILES/nvim/lua" "$XDG_CONFIG_HOME/nvim"
