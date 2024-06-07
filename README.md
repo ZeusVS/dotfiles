@@ -12,6 +12,7 @@ For the complete installation you will need the following programs installed:
 * i3
 * neofetch
 * nvim
+    * TODO: Check if we maybe need to add more lsp/formatters to 'must install'
 * picom
 * rofi
 * vivaldi
@@ -21,6 +22,10 @@ For the complete installation you will need the following programs installed:
     * [powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation)
     * fzf
     * zsh-vi-mode.plugin
+    * asdf
+        * TODO: Check if we maybe need to add asdf config to dotfiles
+        * asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+        * asdf install golang latest
 
 ## Installation
 
