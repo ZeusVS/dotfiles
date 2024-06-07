@@ -19,8 +19,11 @@ For the complete installation you will need the following programs installed:
 * X11
 * zsh
     * zsh-syntax-highlighting
-    * [powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation)
+    * powerlevel10k
     * fzf
+        * lsd
+        * rg
+        * bat
     * zsh-vi-mode.plugin
     * asdf
         * TODO: Check if we maybe need to add asdf config to dotfiles

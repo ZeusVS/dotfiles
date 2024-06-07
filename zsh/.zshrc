@@ -29,10 +29,7 @@ setopt AUTO_PARAM_SLASH
 setopt globdots
 
 # Fuzzyfinder
-if [ $(command -v "fzf") ]; then
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/fzf/key-bindings.zsh
-fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Auto/tab complete
 source $DOTFILES/zsh/external/completion.zsh
