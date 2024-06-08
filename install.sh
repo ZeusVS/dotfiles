@@ -8,11 +8,16 @@ ln -sf "$DOTFILES/nvim/init.lua" "$XDG_CONFIG_HOME/nvim/init.lua"
 rm -rf  "$XDG_CONFIG_HOME/nvim/lua"
 ln -s "$DOTFILES/nvim/lua" "$XDG_CONFIG_HOME/nvim"
 
+########
+# tmux #
+########
+ln -sf "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf"
+
 #######
 # X11 #
 #######
 rm -rf "$XDG_CONFIG_HOME/X11"
-ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
+ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
 #######
 # Eww #
@@ -65,9 +70,9 @@ ln -s "$DOTFILES/neofetch" "$XDG_CONFIG_HOME"
 # Rofi #
 ########
 rm -rf "$XDG_CONFIG_HOME/rofi"
-ln -s "$DOTFILES/rofi" "$XDG_CONFIG_HOME"
+ln -sf "$DOTFILES/rofi" "$XDG_CONFIG_HOME"
 
 ########
 # Curl #
 ########
-ln -s "$DOTFILES/curl/.curlrc" "$HOME"
+ln -sf "$DOTFILES/curl/.curlrc" "$HOME"
