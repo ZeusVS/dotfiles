@@ -6,7 +6,13 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Set 'gd' to '<c-]>' which is project-wide goto definition
-vim.keymap.set("n", "gd", "<c-]>", { desc = "Goto definition" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto definition" })
+vim.keymap.set(
+	"n",
+	"<leader>ca",
+	vim.lsp.buf.code_action,
+	{ desc = "Show code actions" }
+)
 
 -- in visual mode, make J and K move selection up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
