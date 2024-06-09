@@ -1,9 +1,10 @@
 -- set space to leader
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- keymaps for better default experience
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+-- Set <leader>pv to open up netrw, the default file editor
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>", { desc = "Open oil" })
 
 -- Set 'gd' to '<c-]>' which is project-wide goto definition
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto definition" })
