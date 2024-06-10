@@ -1,8 +1,11 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.g.netrw_banner = 0
+-- Sort dirs first
 vim.g.netrw_sort_sequence = [[[\/]$,*]]
+-- Hide ./ and ../
+vim.g.netrw_list_hide = "^./$,^../$"
+vim.g.netrw_hide = 1
 
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"

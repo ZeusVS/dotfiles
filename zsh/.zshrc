@@ -22,14 +22,18 @@ fpath=($fpath $ZDOTDIR/external)
 fpath=($fpath ${ASDF_DIR}/completions)
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
-# Add go/bin to path
+# Add stuff to path
 export PATH="$HOME/go/bin/:$PATH"
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH="$HOME/.fzf/bin:$PATH"
+
+# Setup stuff
+source <(fzf --zsh)
+eval "$(tmuxifier init -)"
+
 
 setopt AUTO_PARAM_SLASH
 setopt globdots
-
-# Fuzzyfinder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Auto/tab complete
 source $DOTFILES/zsh/external/completion.zsh

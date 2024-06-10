@@ -1,6 +1,3 @@
-# For desktop data
-export XDG_CURRENT_DESKTOP="GNOME"
-
 # For config data
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -16,6 +13,7 @@ export VISUAL="nvim"
 # For dotfiles
 export DOTFILES="$HOME/dotfiles"
 
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # History filepath
 export HISTFILE="$ZDOTDIR/.zhistory"
 # Maximum events for internal history
@@ -23,10 +21,8 @@ export HISTSIZE=10000
 # Maximum events in history file
 export SAVEHIST=10000
 
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always --line-range=:500 {}'"
-export FZF_ALT_C_OPTS="--preview 'lsd --tree --icon always --color always --depth 8 {}'"
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always --line-range=:500 {}' --pointer='>'"
+export FZF_ALT_C_OPTS="--preview 'lsd --tree --icon always --color always --depth 3 {}'"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 . "$HOME/.cargo/env"
