@@ -36,7 +36,8 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # startup picom to set things like transparency
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
+# Commented out because our picom config is empty anyway
+#exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -157,5 +158,5 @@ bindsym Print exec --no-startup-id flameshot gui
 exec --no-startup-id feh --randomize --bg-fill ~/.config/i3/wallpapers/*
 
 # Set refresh rate of monitor to 75 Hz at startup
-exec --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1080 --rate 75
+exec --no-startup-id xrandr --output DisplayPort-0 --mode 3440x1440 --rate 160
 # floating pop up automatically
