@@ -1,11 +1,11 @@
 # Zeus's Dotfiles
 
-In this here repo live all my dotfiles
+In this here repo live all my dotfiles, it's a mess atm
 
 ## Prerequisites
 
 For the complete installation you will need the following programs installed:
-For a every machine:
+
 * curl
 * nvim
     * TODO: Check if we maybe need to add more lsp/formatters to 'must install'
@@ -31,7 +31,8 @@ For a every machine:
     * Binstall rg
     * Binstall bat
 
-For a non-vm machine (these are only for a complete desktop experience):
+For a complete desktop experience on a non vm/vps you will need some extra programs installed:
+
 * alacritty
 * eww
 * i3
